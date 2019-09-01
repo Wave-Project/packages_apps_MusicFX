@@ -21,7 +21,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (!SystemProperties.getBoolean("ro.musicfx.disabled", false)) {
-            context.startService(new Intent(context, SystemService.class));
+            context.startForegroundService(new Intent(context, SystemService.class));
         }
     }
 }

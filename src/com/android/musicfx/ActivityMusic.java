@@ -569,7 +569,7 @@ public class ActivityMusic extends AppCompatActivity {
             if (!isServiceRunning()) {
                 if (!SystemProperties.getBoolean("ro.musicfx.disabled", false)) {
                     Log.d(TAG, "starting SystemService from onResume");
-                    startService(new Intent(this, SystemService.class));
+                    startForegroundService(new Intent(this, SystemService.class));
                 }
             }
             mCurrentLevel = ControlPanelEffect.getCurrentPrevLevel(this);
